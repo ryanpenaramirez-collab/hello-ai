@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan - Portafolio Personal</title>
+    <style>
+        /* Variables de colores favoritos: Dorado Metálico y Negro Carbón */
+        :root {
+            --color-primary: #00132f;
+            --color-primary-light: #F3E5AB;
+            --color-bg: #121212;
+            --color-card-bg: #1E1E1E;
+            --color-text: #E0E0E0;
+            --color-text-muted: #A0A0A0;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: var(--color-card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .hero-header {
+            background: linear-gradient(135deg, #1E1E1E 0%, #2A2A2A 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        .avatar-placeholder {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary), #997A15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--color-bg);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--color-primary-light);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        .subtitle span {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .content-section {
+            padding: 30px 25px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .likes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .like-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: transform var(--transition-speed), border-color var(--transition-speed);
+        }
+
+        .like-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--color-primary);
+        }
+
+        .like-icon {
+            font-size: 1.5rem;
+        }
+
+        .like-text {
+            font-size: 1rem;
+            color: var(--color-text);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Diseño Responsivo para Celulares */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                border-radius: 12px;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .content-section {
+                padding: 20px 15px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Encabezado de presentación -->
+        <header class="hero-header">
+            <div class="avatar-placeholder">RP</div>
+            <h1>Hola, soy Ryan</h1>
+            <p class="subtitle">Estudiante de <span>Tecnología en Desarrollo de Software</span> de la UTP en Pereira.</p>
+        </header>
+
+        <!-- Sección de gustos -->
+        <section class="content-section">
+            <h2>Cosas que me gustan</h2>
+            <div class="likes-grid">
+                <div class="like-card">
+                    <span class="like-icon">💻</span>
+                    <span class="like-text">El desarrollo web full-stack y la arquitectura de contenedores</span>
+                </div>
+                <div class="like-card">
+                    <span class="like-icon">⚙️</span>
+                    <span class="like-text">Automatizar flujos de datos y procesos backend</span>
+                </div>
+                <div class="like-card">
+                    <span class="like-icon">☕</span>
+                    <span class="like-text">Programar software de gestión y sistemas POS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pie de página -->
+        <footer class="footer">
+            <p>&copy; 2026 - Creado con diseño moderno y minimalista</p>
+        </footer>
+    </div>
+
+</body>
+</html>
